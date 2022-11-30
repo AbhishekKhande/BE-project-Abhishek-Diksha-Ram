@@ -30,6 +30,6 @@ Cylon.robot({
   }
 }).start();
 
-// exports.MyAnalogValue = ()=>{
-//   return analogValue;
-// }
+export var MyAnalogValue = ()=>{
+  return analogValue;
+}
