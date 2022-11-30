@@ -30,6 +30,10 @@ Cylon.robot({
   }
 }).start();
 
+<<<<<<< HEAD
 exports.MyAnalogValue = ()=>{
+=======
+export var MyAnalogValue = ()=>{
+>>>>>>> 2be1d7f0f45f656610c937446c8b83f663074928
   return analogValue;
 }
