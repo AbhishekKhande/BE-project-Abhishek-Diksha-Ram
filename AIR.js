@@ -10,12 +10,26 @@ Cylon.robot({
   },
 
   work: function(my) {
-    var analogValue = 0;
-
-    every((0.4).second(), function() {
-      analogValue = my.sensor.analogRead();
-      console.log('Air quality is ', analogValue);
-    });
-
+    var analogValue = [];
+    // let analogArray = analogValue.push(my.sensor.analogRead());
+    // console.log(analogArray)
+          every((1).second(), function() {
+            analogValue.push(my.sensor.analogRead());
+            var sum = 0;
+            if(analogValue.length == 10){
+              // console.log(analogValue);
+              for(let i=0;i<analogValue.length;i++){
+                sum = sum + analogValue[i]
+              }
+            var AverageArray = sum/analogValue.length;
+              console.log(AverageArray);
+              analogValue = []
+            }
+          });
+          
   }
 }).start();
+
+// exports.MyAnalogValue = ()=>{
+//   return analogValue;
+// }
