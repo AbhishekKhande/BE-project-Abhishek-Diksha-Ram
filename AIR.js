@@ -22,18 +22,21 @@ Cylon.robot({
                 sum = sum + analogValue[i]
               }
             var AverageArray = sum/analogValue.length;
-              console.log(AverageArray);
+              // console.log(AverageArray);
               analogValue = []
             }
           });
           
   }
-}).start();
+  
+  
+})
 
-<<<<<<< HEAD
-exports.MyAnalogValue = ()=>{
-=======
-export var MyAnalogValue = ()=>{
->>>>>>> 2be1d7f0f45f656610c937446c8b83f663074928
-  return analogValue;
-}
+Cylon.api(
+  'mqtt',
+  {
+  broker: 'mqtt://test.mosquitto.org',
+  prefix: 'cybot', // Optional
+});
+
+Cylon.start();

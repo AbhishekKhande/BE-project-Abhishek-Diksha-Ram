@@ -1,1 +1,1 @@
-console.log(printValue.MyAnalogValue);
+turn_on
